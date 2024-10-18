@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.schema({
-    firstnme: {
+    firstname: {
         type:string,
         required:true,
         trim:true,
@@ -10,7 +10,8 @@ const userSchema = new mongoose.schema({
         required:true,
         trim:true,
     },
-    email:{type:string,
+    email:{
+        type:string,
         required:true,
         trim:true,
     },
@@ -39,11 +40,11 @@ const userSchema = new mongoose.schema({
         type:string,
         required:true,
     },
-    courseprogress:{
+    courseProgress:[{
         type:mongoose.Schema.ObjectId,
         required:true,
         ref:CourseProgress,
-    }
-
-
+    }],
 });
+
+module.exports = mongoose.model("User",userSchema);
