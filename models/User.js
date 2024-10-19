@@ -27,12 +27,12 @@ const userSchema = new mongoose.schema({
     },
     //profile details
     additionaldetails:{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:"Profile",
     },
     courses:{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:"Course",
     },
@@ -41,7 +41,7 @@ const userSchema = new mongoose.schema({
         required:true,
     },
     courseProgress:[{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:CourseProgress,
     }],
