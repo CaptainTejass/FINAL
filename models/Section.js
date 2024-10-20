@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const SubSectionSchema = new mongoose.schema({
+const sectionSchema = new mongoose.schema({
     sectionname: {
         type:string,
         required:true,
@@ -7,7 +7,7 @@ const SubSectionSchema = new mongoose.schema({
     },
     subSection: [{
         type:mongoose.Schema.Types.ObjectId, 
-        ref:subSection,
+        ref:"subSection",
         required:true,       
         
     }],
@@ -16,4 +16,4 @@ const SubSectionSchema = new mongoose.schema({
     
 });
 
-module.exports = mongoose.model("Profile",profileSchema);
+module.exports = mongoose.model("Section",sectionSchema);

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CourseSchema = new mongoose.schema({
+const courseSchema = new mongoose.schema({
     courseName: {
         type:string,
         required:true,
@@ -37,9 +37,10 @@ const CourseSchema = new mongoose.schema({
     studentEnrolled:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:User,
-    }]
+        required:true,
+    }],
     
     
 });
 
-module.exports = mongoose.model("Profile",profileSchema);
+module.exports = mongoose.model("Course",courseSchema);
